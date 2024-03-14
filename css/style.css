@@ -1,0 +1,131 @@
+@import url(crt.css);
+@font-face {
+    font-family: VT323;
+    src: url(../font/VT323-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    position: relative;
+}
+
+pre {
+    font-family:'VT323', 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(87, 173, 173);
+}
+
+a:hover {
+    color: rgb(102, 237, 237);
+}
+
+a:active {
+    color: rgb(76, 255, 255);
+    font-weight: bold;
+}
+
+.header {
+    font-size: 1.3em;
+    font-weight: normal;
+}
+.blue {
+    color: rgb(87, 173, 173);
+    font-style: normal;
+    font-weight: 100;
+}
+
+::selection {
+    color: black;
+    background-color: rgb(87, 173, 173);
+}
+
+#typewriter:after {
+    content: "_";
+    animation: blink 300ms infinite alternate;
+}
+
+#sf {
+    position: absolute;
+    top: calc(50vh - 675px);
+    left: calc(50vw - 500px);
+    width: 1000px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s;
+    animation: rotate 30s linear infinite;
+    filter: blur(4px);
+}
+
+.buzz_wrapper {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #000;
+    padding: 30px 50px;
+    overflow-x: hidden;
+}
+
+.buzz_wrapper .text {
+    animation: jerkwhole 5s infinite;
+    position: relative;
+}
+
+.buzz_wrapper pre {
+    position: absolute;
+    filter: blur(1px);
+    font-size: 27px;
+    animation: blur 30ms infinite, jerk 50ms infinite;
+}
+
+.buzz_wrapper pre:nth-child(1) {
+    color: red;
+    margin-left: -2px;
+    filter: blur(2px);
+}
+
+.buzz_wrapper pre:nth-child(2) {
+    color: green;
+    margin-left: 2px;
+    filter: blur(2px);
+    animation: jerkgreen 1s infinite;
+}
+
+.buzz_wrapper pre:nth-child(3) {
+    color: blue;
+    position: 20px 0;
+    filter: blur(1px);
+    animation: jerkblue 1s infinite;
+}
+
+.buzz_wrapper pre:nth-child(4) {
+    color: white;
+    filter: blur(1px);
+    text-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+}
+
+.buzz_wrapper pre:nth-child(5) {
+    color: rgba(255, 255, 255, 0.4);
+    filter: blur(15px);
+}
+
+.buzz_wrapper {
+    animation: none;
+}
+
+
+@media only screen and (max-width: 820px) {
+    pre{
+        font-size: 0.95em;
+        line-height: 1em;
+    }
+}
