@@ -83,7 +83,7 @@ a:active {
 .buzz_wrapper pre {
     position: absolute;
     filter: blur(1px);
-    font-size: 27px;
+    font-size: 1.3rem;
     animation: blur 30ms infinite, jerk 50ms infinite;
 }
 
@@ -127,5 +127,11 @@ a:active {
     pre{
         font-size: 0.95em;
         line-height: 1em;
+    }
+}
+
+@media only screen and (min-width: 2160px) {
+    pre{
+        font-size: 1.1em;
     }
 }
