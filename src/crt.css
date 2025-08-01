@@ -1,3 +1,5 @@
+/* Based on the work of Chris Rickels (https://codepen.io/cRckls/pen/DJvZXo), but quite modified by me */
+
 .crt {
   overflow: hidden;
   position: relative;
@@ -172,4 +174,3 @@
   65% {
   }
 }
-/* Based on work of Chris Rickels (https://codepen.io/cRckls/pen/DJvZXo) */

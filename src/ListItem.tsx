@@ -16,9 +16,9 @@ export default function ListItem({ data }: { data: RepoData }) {
     return `https://hexhyperion.github.io/${name}`;
   };
 
-  const makeHeaderSeparator = (length: number) => {
-    return "-".repeat(length);
-  };
+  // const makeHeaderSeparator = (length: number) => {
+  //   return "-".repeat(length);
+  // };
 
   useEffect(() => {
     const checkSiteExists = async () => {
@@ -33,13 +33,13 @@ export default function ListItem({ data }: { data: RepoData }) {
       }
     };
     checkSiteExists();
-  }, []);
+  }, [data.name]);
 
   return (
     <div className="list-item">
-      <p className="header">{data.name}<br/>{makeHeaderSeparator(data.name.length)}</p>
+      <p className="header">{data.name}</p>
       <p>{data.description}</p>
-      <p className="space-top"><span className="cyan">{data.language}</span> / {data.stargazers_count} stars</p>
+      <p><span className="cyan">{data.language}</span> / {data.stargazers_count} stars</p>
       <p className="space-top">[<a href={data.html_url}>view_gh</a>]{siteExists ? <span> / [<a href={makePagesUrl(data.name)}>view_web</a>]</span> : null}</p>
     </div>
   );
