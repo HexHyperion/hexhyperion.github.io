@@ -5,7 +5,9 @@
   </head>
   <body>
     <script>
-      window.location.replace("/");
+      if (location.pathname !== '/' && !location.pathname.startsWith('/assets')) {
+        location.replace('/index.html' + location.search + location.hash);
+      }
     </script>
   </body>
 </html>
