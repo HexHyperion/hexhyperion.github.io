@@ -130,7 +130,7 @@ pre {
 .glitch-layer:nth-child(1) {
   transform: translate(-1px, 0.5px);
   z-index: 1;
-  animation: blur 30ms infinite, jerk 50ms infinite;
+  animation: flickersmall 30ms infinite, jerk 50ms infinite;
 }
 .glitch-layer:nth-child(1) * {
   color: red !important;
@@ -138,7 +138,7 @@ pre {
 }
 .glitch-layer:nth-child(2) {
   transform: translate(1px, -0.5px);
-  animation: blur 30ms infinite, jerk 50ms infinite, jerkgreen 1s infinite;
+  animation: flickersmall 30ms infinite, jerk 50ms infinite, jerkgreen 1s infinite;
   z-index: 2;
 }
 .glitch-layer:nth-child(2) * {
@@ -146,7 +146,7 @@ pre {
   border-color: green !important;
 }
 .glitch-layer:nth-child(3) {
-  animation: blur 30ms infinite, jerk 50ms infinite, jerkblue 1s infinite;
+  animation: flickersmall 30ms infinite, jerk 50ms infinite, jerkblue 1s infinite;
   z-index: 3;
 }
 .glitch-layer:nth-child(3) * {
@@ -155,9 +155,11 @@ pre {
 }
 .glitch-layer:nth-child(4) {
   color: white;
-  filter: blur(0.5px);
-  text-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
   z-index: 4;
+}
+
+#content {
+  filter: blur(0.5px);
 }
 
 .buzz_wrapper.scrolling .glitch-layer,

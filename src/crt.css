@@ -73,17 +73,14 @@
   100% {opacity: 0.24387;}
 }
 
-@keyframes blur {
+@keyframes flickersmall {
   0% {
-    filter: blur(0.8px);
     opacity: 0.8;
   }
   50% {
-    filter: blur(0.8px);
     opacity: 1;
   }
   100% {
-    filter: blur(0.8px);
     opacity: 0.8;
   }
 }
