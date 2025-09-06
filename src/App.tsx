@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Glitch from "./Glitch";
 import ListItem, { RepoData } from "./ListItem";
 
 export default function Home() {
   const [repos, setRepos] = useState<RepoData[]>([]);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollTimeoutRef = useRef<number | undefined>(undefined);
 
   const LOCAL_STORAGE_KEY = "hexhyperion_repos";
   const LOCAL_STORAGE_TIME_KEY = "hexhyperion_repos_time";
@@ -50,9 +52,33 @@ export default function Home() {
     }
   }, []);
 
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const onScroll = () => {
+      scrollContainer.classList.add('scrolling');
+      if (scrollTimeoutRef.current) {
+        window.clearTimeout(scrollTimeoutRef.current);
+      }
+      scrollTimeoutRef.current = window.setTimeout(() => {
+        scrollContainer.classList.remove('scrolling');
+      }, 200);
+    };
+    scrollContainer.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      if (scrollTimeoutRef.current) {
+        window.clearTimeout(scrollTimeoutRef.current);
+      }
+      scrollContainer.removeEventListener('scroll', onScroll as EventListener);
+    };
+  }, []);
+
   return (
     <div className="crt">
-      <div className="buzz_wrapper" id="main">
+      <div className="buzz_wrapper" id="main" ref={scrollRef}>
         <Glitch>
           <div id="content">
             <main>
@@ -65,7 +91,7 @@ export default function Home() {
                 <p className="header">--------</p>
                 <p>
                   <span title="General Kenobi...">Hello there!</span> I'm a random {getMyAge()}-year-old guy from Poland fascinated with technology, automotive and computer science, who ended up programming things in school :P<br/>
-                  Mainly you'd see me working with various flavors and applications of JS/TS, but I touch some C++, C# and (God forbid) Python from time to time. We'll see in what years' time I'll sit down to learn Rust, Java and Kotlin as I planned...<br/><br/>
+                  Mainly you'd see me working with various flavors and applications of JS/TS, but I touch some Kotlin, C++, C# and (God forbid) Python from time to time. We'll see in what years' time I'll sit down to learn Rust and Java as I planned...<br/><br/>
                   After losing all my brain cells working with JavaScript, I sometimes happen to accidentally touch grass while running around with a camera, taking some (or trying to do so) creative documentary and artistic photos, which you can find on my IG and Flickr below!<br/><br/>
                   I also love myself some good ol' American cars, fast bikes, classic rock/metal and Japanese swords, however weird this combination may seem... I'm a big Star Wars fan, too, swinging glowing sticks at things and spitting random quotes at every possible occasion :D<br/>
                   Oh, and I obviously hold a great interest in theatre and literature, but that's more as a recipient, for now at least ;)<br/><br/>
