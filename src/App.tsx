@@ -91,10 +91,9 @@ export default function Home() {
                 <p className="header">--------</p>
                 <p>
                   <span title="General Kenobi...">Hello there!</span> I'm a random {getMyAge()}-year-old guy from Poland fascinated with technology, automotive and computer science, who ended up programming things in school :P<br/>
-                  Mainly you'd see me working with various flavors and applications of JS/TS, but I touch some Kotlin, C++, C# and (God forbid) Python from time to time. We'll see in what years' time I'll sit down to learn Rust and Java as I planned...<br/><br/>
+                  Mainly you'd see me working with various flavors and applications of JS/TS, but I touch some native mobile dev, C++, C# and (God forbid) Python from time to time. We'll see in what years' time I'll sit down to learn Rust and Java as I planned...<br/><br/>
                   After losing all my brain cells working with JavaScript, I sometimes happen to accidentally touch grass while running around with a camera, taking some (or trying to do so) creative documentary and artistic photos, which you can find on my IG and Flickr below!<br/><br/>
-                  I also love myself some good ol' American cars, fast bikes, classic rock/metal and Japanese swords, however weird this combination may seem... I'm a big Star Wars fan, too, swinging glowing sticks at things and spitting random quotes at every possible occasion :D<br/>
-                  Oh, and I obviously hold a great interest in theatre and literature, but that's more as a recipient, for now at least ;)<br/><br/>
+                  I also love myself some good ol' American cars, fast bikes, classic rock/metal and Japanese swords, however weird this combination may seem... I'm a big Star Wars fan, too, swinging glowing sticks at things and spitting random quotes at every possible occasion :D<br/><br/>
                   If you'd like to see my questionable art, either in text or pixels, look down!
                 </p>
 
